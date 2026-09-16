@@ -1,3 +1,4 @@
+import json
 #!/usr/bin/env python3
 """ESCL v3.3 — Player-facing service layer over the authoritative v3.2 backend."""
 
@@ -60,8 +61,11 @@ def ensure_v51_tables():
         bio TEXT,
         rookie_season INTEGER NOT NULL DEFAULT 1,
         career_status TEXT NOT NULL DEFAULT 'ROOKIE',
+        appearance_json TEXT NOT NULL DEFAULT '{}',
         created_at TEXT NOT NULL
     )""")
+    cols={r["name"] for r in c.execute("PRAGMA table_info(driver_profiles)").fetchall()}
+    if "appearance_json" not in cols: c.execute("ALTER TABLE driver_profiles ADD COLUMN appearance_json TEXT NOT NULL DEFAULT '{}'")
     c.commit();c.close()
 
 def creation_state():
@@ -74,7 +78,7 @@ def creation_state():
          "used_numbers":sorted(nums)}
     c.close();return out
 
-def create_driver(name,number,attributes,hometown="",team_id=None):
+def create_driver(name,number,attributes,hometown="",team_id=None,appearance=None):
     ensure_v51_tables()
     name=(name or "").strip()
     if len(name)<2 or len(name)>40: raise ValueError("DRIVER_NAME_INVALID")
@@ -113,8 +117,9 @@ def create_driver(name,number,attributes,hometown="",team_id=None):
     c.execute("INSERT INTO career_stats(driver_id) VALUES(?)",(did,))
     season=base.current_season(c)
     c.execute("INSERT OR IGNORE INTO standings(season,driver_id) VALUES(?,?)",(season,did))
-    c.execute("INSERT INTO driver_profiles(driver_id,hometown,rookie_season,career_status,created_at) VALUES(?,?,?,?,?)",
-              (did,(hometown or "").strip()[:60],season,"ROOKIE",db.now()))
+    appearance_json=json.dumps(appearance or {},separators=(",",":"))
+    c.execute("INSERT INTO driver_profiles(driver_id,hometown,rookie_season,career_status,appearance_json,created_at) VALUES(?,?,?,?,?,?)",
+              (did,(hometown or "").strip()[:60],season,"ROOKIE",appearance_json,db.now()))
     if chosen:
         # Retire the placeholder from active competition and give the rookie its seat.
         c.execute("UPDATE contracts SET active=0 WHERE driver_id=? AND active=1",(chosen["id"],))
@@ -797,10 +802,16 @@ def driver(driver_id):
     seasons=c.execute("""SELECT ds.*,t.name team_name FROM driver_seasons ds
                          LEFT JOIN teams t ON t.id=ds.team_id
                          WHERE ds.driver_id=? ORDER BY season DESC""",(driver_id,)).fetchall()
+    profile=c.execute("SELECT * FROM driver_profiles WHERE driver_id=?",(driver_id,)).fetchone()
     contract=c.execute("""SELECT c.*,t.name team_name FROM contracts c JOIN teams t ON t.id=c.team_id
                           WHERE c.driver_id=? AND c.active=1""",(driver_id,)).fetchone()
     c.close()
-    return {"driver":dict(d),"career":dict(career) if career else None,
+    dd=dict(d)
+    if profile:
+        try: dd["appearance"]=json.loads(profile["appearance_json"] or "{}")
+        except Exception: dd["appearance"]={}
+        dd["hometown"]=profile["hometown"]
+    return {"driver":dd,"career":dict(career) if career else None,
             "seasons":[dict(x) for x in seasons],"contract":dict(contract) if contract else None}
 
 def race(race_id):

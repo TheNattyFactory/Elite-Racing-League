@@ -279,7 +279,7 @@ class App(BaseHTTPRequestHandler):
             if p.startswith("/api/") and p not in ("/api/auth/register","/api/auth/login","/api/auth/elite") and not self.require_user():return
             if p.startswith("/api/") and p not in ("/api/auth/register","/api/auth/login","/api/auth/elite","/api/auth/forgot-password","/api/auth/reset-password","/api/auth/logout","/api/auth/logout-all","/api/auth/resend-verification","/api/legal/accept","/api/admin/moderate") and not p.startswith("/api/commish/"):
                 if not self.require_verified():return
-            if p=="/api/driver/create": return self.out(svc.create_driver(b.get("name"),b.get("number"),b.get("attributes",{}),b.get("hometown",""),b.get("team_id")))
+            if p=="/api/driver/create": return self.out(svc.create_driver(b.get("name"),b.get("number"),b.get("attributes",{}),b.get("hometown",""),b.get("team_id"),b.get("appearance",{})))
             if p=="/api/commish/reset-for-creation": return self.out(svc.reset_for_creation())
             if p=="/api/weekend/practice": return self.out(svc.practice(b.get("setup_bias","BALANCED"),b.get("driving_style","BALANCED"),b.get("pit_plan","STANDARD")))
             if p=="/api/weekend/qualify": return self.out(svc.qualify(int(b.get("seed",1))))
