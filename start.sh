@@ -1,3 +1,2 @@
-#!/usr/bin/env sh
-set -eu
-exec python escl_v6_3_webapp.py
+#!/bin/sh
+exec python3 escl_v6_3_webapp.py
