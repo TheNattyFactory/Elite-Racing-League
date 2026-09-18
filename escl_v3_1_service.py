@@ -6,16 +6,14 @@ No race engine globals are allowed to own career state.
 """
 
 import importlib.util, sys, random, json
-from pathlib import Path
-BASE_DIR=Path(__file__).resolve().parent
-sys.path.insert(0,str(BASE_DIR))
+sys.path.insert(0,"/mnt/data")
 
 def load(path,name):
     spec=importlib.util.spec_from_file_location(name,path)
     mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod);return mod
 
-db=load(str(BASE_DIR/"escl_v3_1_database.py"),"db")
-eng=load(str(BASE_DIR/"escl_v5_0_locked_race_engine.py"),"eng")
+db=load("/mnt/data/escl_v3_1_database.py","db")
+eng=load("/mnt/data/escl_v2_8_lap_engine.py","eng")
 
 def current_season(c):
     r=c.execute("SELECT v FROM league_state WHERE k='season'").fetchone()

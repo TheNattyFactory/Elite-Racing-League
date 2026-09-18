@@ -8,7 +8,6 @@ race engine, career systems, Silly Season, standings and commissioner actions.
 import sqlite3, json, uuid, datetime
 from pathlib import Path
 
-BASE_DIR=Path(__file__).resolve().parent
 DB_PATH="/mnt/data/escl_v3_1.db"
 
 def now():
@@ -269,7 +268,7 @@ def bootstrap_living_league(seed=3100):
     """Import canonical v1.9 league once into the authoritative DB."""
     import importlib.util, sys
     sys.path.insert(0,"/mnt/data")
-    spec=importlib.util.spec_from_file_location("living",str(BASE_DIR/"escl_living_league_v1_9.py"))
+    spec=importlib.util.spec_from_file_location("living","/mnt/data/escl_living_league_v1_9.py")
     living=importlib.util.module_from_spec(spec);spec.loader.exec_module(living)
     drivers,human=living.build_initial_league(seed)
 
@@ -286,7 +285,7 @@ def bootstrap_living_league(seed=3100):
             id,user_id,name,number,age,team_id,role,is_cpu,retired,xp,potential,peak_start,peak_end,dev_type,form,
             spd,rcr,qlf,con,tir,drf,ctl,agg,created_at)
             VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-            (did,user_id if d.human else None,d.name,d.number,d.age,d.team_id,d.role,0 if d.human else 1,0,d.xp,
+            (did,None,d.name,d.number,d.age,d.team_id,d.role,1,0,d.xp,
              d.potential,d.peak_start,d.peak_end,d.dev_type,d.form,
              a["SPD"],a["RCR"],a["QLF"],a["CON"],a["TIR"],a["DRF"],a["CTL"],a["AGG"],now()))
         c.execute("""INSERT INTO contracts(id,driver_id,team_id,season_start,seasons,role,salary_xp,active,created_at)

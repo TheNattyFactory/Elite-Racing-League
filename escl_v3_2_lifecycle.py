@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
-import importlib.util
-from pathlib import Path
-import sys,random
-sys.path.insert(0,str(Path(__file__).resolve().parent))
+import importlib.util,sys,random
+sys.path.insert(0,'/mnt/data')
 
 def load(path,name):
     spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
 
-BASE_DIR=Path(__file__).resolve().parent
-db=load(str(BASE_DIR/'escl_v3_1_database.py'),'db')
+db=load('/mnt/data/escl_v3_1_database.py','db')
 ATTRS=('spd','rcr','qlf','con','tir','drf','ctl','agg');ROLES=('LEAD','SECOND','THIRD')
 FIRST=('Eli','Mason','Wyatt','Caleb','Cole','Ryan','Luke','Nate','Grant','Blake','Chase','Hunter','Dylan','Noah','Gavin','Trevor','Austin','Marcus','Jace','Logan','Tyler')
 LAST=('Rivers','Bishop','Hale','Dalton','Foster','Nash','Baker','Sutton','Mills','Sharp','Carter','Fleming','Parker','Holt','Warren','Knox','Dawson','Reed','Price','Stone')
