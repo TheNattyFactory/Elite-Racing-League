@@ -247,6 +247,10 @@ body:not(.no-driver) #homeNews .newsitem{padding:13px 0;border-bottom:1px solid 
 @media(max-width:720px){body:not(.no-driver) .escl-profile-row{align-items:flex-start;gap:13px}body:not(.no-driver) .escl-number{font-size:54px!important}body:not(.no-driver) .escl-driver-meta h1{font-size:25px!important}body:not(.no-driver) .kpis{grid-template-columns:repeat(2,1fr)!important}}
 
 
+
+/* ESCL v6.6 — Track Intelligence + Weekend Garage */
+.track-intel{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:12px}.intel-box{border:1px solid #293746;background:#0a1119;border-radius:8px;padding:11px}.intel-box b{display:block;font-size:17px;color:#fff}.intel-box span{font-size:10px;color:#8f9daf;text-transform:uppercase;letter-spacing:.07em}.skill-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.skill-chip{padding:5px 8px;border:1px solid rgba(255,196,0,.3);background:rgba(255,196,0,.07);border-radius:999px;font-size:10px;font-weight:900;color:#ffd65c}.garage-report{margin-top:14px;border-left:3px solid var(--escl-gold);background:linear-gradient(90deg,rgba(255,196,0,.08),rgba(255,196,0,.015));padding:13px 14px;border-radius:0 8px 8px 0}.garage-grade{font-size:28px;font-weight:1000;line-height:1}.garage-copy{font-size:12px;color:#a8b5c4;margin-top:6px;line-height:1.5}.fit-meter{height:7px;background:#18232e;border-radius:99px;overflow:hidden;margin-top:8px}.fit-meter i{display:block;height:100%;background:linear-gradient(90deg,#8b6b00,var(--escl-gold));border-radius:99px}.weekend-callout{margin-top:12px;padding:11px 12px;border:1px solid #2b3947;background:#0b121a;border-radius:8px;font-size:12px}.weekend-callout strong{color:#fff}.weekend-callout .muted{margin-top:3px}@media(max-width:720px){.track-intel{grid-template-columns:1fr}}
+
 /* ESCL v6.4.4 — Race Weekend broadcast presentation */
 #weekend .card:first-child{overflow:hidden;position:relative;background:radial-gradient(circle at 82% 18%,rgba(255,183,0,.13),transparent 28%),linear-gradient(125deg,#111a25,#080d14 70%)}
 #weekend .card:first-child:after{content:"RACE WEEKEND";position:absolute;right:-8px;bottom:-18px;font-size:72px;font-weight:1000;font-style:italic;color:rgba(255,255,255,.025);pointer-events:none}
@@ -262,6 +266,25 @@ body:not(.no-driver) #homeNews .newsitem{padding:13px 0;border-bottom:1px solid 
 #racecast .racecast-grid{gap:14px!important}#racecast .ticker{border:1px solid #2b3948!important;background:#090f16!important;border-radius:8px!important}
 #racecast .event{border-bottom:1px solid #202b37!important;padding:11px 4px!important}
 @media(max-width:720px){#weekend .session-strip{grid-template-columns:1fr!important}#weekend .track-title{font-size:25px!important}#weekend .card:first-child:after{font-size:44px}}
+
+
+/* ESCL v6.5 — legacy navigation & championship surfaces */
+.pageHead{margin:6px 0 18px;padding:22px 24px;border:1px solid #202b38;border-radius:12px;background:linear-gradient(145deg,#0d141e,#090e15)}
+.pageHead h1{margin:4px 0 6px;font-size:34px;text-transform:uppercase}.pageHead p{margin:0;color:#91a0b2}.eyebrow{color:var(--escl-gold);font-size:11px;font-weight:1000;letter-spacing:.16em;text-transform:uppercase}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}.panel{background:#0d131b;border:1px solid #202b38;border-radius:12px;padding:20px;margin-bottom:18px}.panelHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.panelHead h2{margin:0;font-size:18px;text-transform:uppercase}.tableWrap{overflow:auto}.attrGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.nav{scrollbar-width:thin}.nav button[data-page=career],.nav button[data-page=championship],.nav button[data-page=records]{border-bottom-color:rgba(255,183,0,.16)}
+@media(max-width:800px){.grid2{grid-template-columns:1fr}.attrGrid{grid-template-columns:repeat(2,1fr)}.pageHead h1{font-size:27px}}
+
+/* ESCL v6.5.1 — qualifying broadcast & starting grid */
+.qualifying-board{margin-top:14px;border:1px solid #293746;border-radius:9px;overflow:hidden;background:#080d14}
+.qualifying-head{display:grid;grid-template-columns:48px 64px minmax(0,1fr) 92px;gap:8px;padding:9px 12px;background:#111a25;color:#8998aa;font-size:10px;font-weight:1000;text-transform:uppercase;letter-spacing:.08em}
+.qualifying-row{display:grid;grid-template-columns:48px 64px minmax(0,1fr) 92px;gap:8px;padding:9px 12px;border-top:1px solid #1c2836;align-items:center;font-size:12px}
+.qualifying-row.you{background:rgba(255,196,0,.09);box-shadow:inset 3px 0 0 var(--escl-gold)}
+.qualifying-pos{font-size:16px;font-weight:1000}.qualifying-car{color:var(--escl-gold);font-weight:1000}.qualifying-time{text-align:right;font-variant-numeric:tabular-nums}
+.weekend-story{margin-top:14px;padding:14px;border:1px solid #2a3948;border-radius:8px;background:linear-gradient(135deg,#0c141f,#091018)}
+.weekend-story strong{color:var(--escl-gold)}.fit-meter{height:7px;background:#1b2735;border-radius:999px;overflow:hidden;margin-top:9px}.fit-meter span{display:block;height:100%;background:var(--escl-gold)}
+.grid-preview{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}.grid-slot{padding:9px 10px;border:1px solid #263544;border-radius:7px;background:#0a1119;font-size:11px}.grid-slot.you{border-color:#7a6200;background:rgba(255,196,0,.07)}
+@media(max-width:600px){.qualifying-head,.qualifying-row{grid-template-columns:38px 52px minmax(0,1fr) 76px;padding-left:8px;padding-right:8px}.grid-preview{grid-template-columns:1fr}}
 
 </style>
 </head>
@@ -299,6 +322,9 @@ body:not(.no-driver) #homeNews .newsitem{padding:13px 0;border-bottom:1px solid 
     <button data-page="weekend">Race Weekend</button>
     <button data-page="racecast">Racecast</button>
     <button data-page="driver">Driver</button>
+    <button data-page="career">Career</button>
+    <button data-page="championship">Championship</button>
+    <button data-page="records">Records</button>
     <button data-page="teams">Teams</button>
     <button data-page="standings">Standings</button>
     <button data-page="silly">Silly Season</button>
@@ -321,7 +347,7 @@ body:not(.no-driver) #homeNews .newsitem{padding:13px 0;border-bottom:1px solid 
 
     <section id="page-racecast" class="page"><div class="grid">
       <div class="card span12">
-        <div class="row space"><div><h2>ESCL Race Broadcast</h2><div class="muted">Replay the real simulated race lap by lap.</div></div><span class="badge">DEPLOYMENT & BETA GATE v6.3</span></div>
+        <div class="row space"><div><h2>ESCL Race Broadcast</h2><div class="muted">Replay the real simulated race lap by lap.</div></div><span class="badge">ESCL LIVE RACECAST • v6.6</span></div>
         <div class="broadcast-wrap" style="margin-top:12px">
           <div>
             <div class="broadcast-stage">
@@ -380,6 +406,7 @@ body:not(.no-driver) #homeNews .newsitem{padding:13px 0;border-bottom:1px solid 
     <section id="page-driver" class="page"><div class="grid">
       <div class="card span5" id="driverCard"></div>
       <div class="card span7"><h3>Attributes & Training</h3><div id="attributes" class="attrgrid"></div></div>
+      <div class="card span12"><h3>Living Career</h3><div id="livingCareer"></div></div>
       <div class="card span12"><h3>Career Record</h3><div id="careerHistory"></div></div>
     </div></section>
 
@@ -442,12 +469,16 @@ body:not(.no-driver) #homeNews .newsitem{padding:13px 0;border-bottom:1px solid 
 
 <script>
 let DATA={};
+const ESCL_SESSION_KEY='escl_session';
 const $=s=>document.querySelector(s);
 const fmt=n=>Number(n||0).toLocaleString();
 async function api(path,opts={}){
-  const r=await fetch(path,{headers:{'Content-Type':'application/json'},...opts});
-  const j=await r.json();
-  if(!r.ok) throw new Error(j.error||j.detail||'Request failed');
+  const token=localStorage.getItem(ESCL_SESSION_KEY)||'';
+  const headers={'Content-Type':'application/json',...(opts.headers||{})};
+  if(token)headers.Authorization='Bearer '+token;
+  const r=await fetch(path,{...opts,headers});
+  let j={};try{j=await r.json()}catch{}
+  if(!r.ok){const e=new Error(j.error||j.detail||'Request failed');e.status=r.status;e.code=j.error||'';throw e}
   return j;
 }
 async function post(path,obj={}){return api(path,{method:'POST',body:JSON.stringify(obj)})}
@@ -459,6 +490,9 @@ $('#nav').onclick=e=>{
   document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
   $('#page-'+b.dataset.page).classList.add('active');
+  if(b.dataset.page==='career')renderCareerHub();
+  if(b.dataset.page==='championship')renderChampionship();
+  if(b.dataset.page==='records')renderRecords();
 };
 
 
@@ -494,6 +528,24 @@ function renderNoDriverHome(dashboard){
   $('#homeNews').innerHTML='<div class="no-driver-kicker">Drive Your Legacy</div><h3 style="font-size:26px;margin:10px 0">More than a league — a place for racers.</h3><div class="muted">Create your driver to unlock Race Weekend, Racecast, standings, contracts and your career record.</div>';
 }
 
+function captureEliteSession(){
+  const h=new URLSearchParams(location.hash.replace(/^#/,''));
+  const token=h.get('elite_session');
+  if(token){localStorage.setItem(ESCL_SESSION_KEY,token);history.replaceState({},'',location.pathname+location.search);}
+}
+function renderAuthGate(){
+  document.body.classList.remove('loading');document.body.classList.add('no-driver');
+  $('#seasonPill').textContent='Elite Identity';$('#phasePill').textContent='Sign In';$('#roundPill').textContent='ESCL';
+  $('#homeDriver').innerHTML=`<div class="no-driver-hero"><div class="no-driver-copy"><div class="no-driver-kicker">Elite Sports Identity</div><h1>Enter the Elite Stock Car League</h1><p>ESCL uses your Elite Sports Leagues account. Sign in once at the hub, then return here to create and manage your racing career.</p><button class="btn primary" onclick="location.href='/elite/login'">Continue with Elite Sports Leagues →</button></div><div class="no-driver-art"><div class="legacy-words">ONE ACCOUNT<br>SEPARATE CAREERS<br>ONE LEGACY</div></div></div>`;
+  $('#homeNext').innerHTML='<h3>Driver Profile</h3><div class="muted">Connect your Elite identity to begin.</div>';
+  $('#homeStandings').innerHTML='<div class="empty">Your ESCL career will appear here after you connect.</div>';
+  $('#homeNews').innerHTML='<div class="no-driver-kicker">Drive Your Legacy</div><h3 style="font-size:26px;margin:10px 0">Your Elite identity. Your racing career.</h3>';
+}
+async function bootstrap(){
+  captureEliteSession();
+  try{await api('/api/auth/me')}catch(e){if(e.status===401||e.code==='AUTH_REQUIRED'){localStorage.removeItem(ESCL_SESSION_KEY);renderAuthGate();return}throw e}
+  await loadAll();
+}
 async function loadAll(){
   document.body.classList.add('loading');
   try{
@@ -528,17 +580,43 @@ function renderAll(){
 }
 function go(p){document.querySelector(`button[data-page="${p}"]`).click()}
 
+function driverTrackFit(driver,ti){
+  if(!driver||!ti||!ti.weights)return null;
+  const attrs=['SPD','RCR','CTL','CON','TIR','DRF','AGG'];
+  let total=0,weight=0;
+  attrs.forEach(a=>{const w=Number(ti.weights[a]||0);total+=Number(driver[a.toLowerCase()]||driver[a]||60)*w;weight+=w});
+  return weight?Math.round(total/weight):null;
+}
+function weekendAdvice(ti,s,fit){
+  const kind=ti.kind||'';
+  let setup=kind==='ROAD_COURSE'||kind==='SHORT_TRACK'||kind==='FLAT_OVAL'?'HANDLING':kind==='SUPERSPEEDWAY'||kind==='HIGH_BANK'?'SPEED':'BALANCED';
+  let style=kind==='SUPERSPEEDWAY'?'BALANCED':kind==='SHORT_TRACK'?'AGGRESSIVE':'BALANCED';
+  let pit=Number(ti.tire_wear||1)>1.08?'SHORT':Number(ti.tire_wear||1)<.94?'LONG':'STANDARD';
+  const picks=[]; if(s.setup_bias&&s.setup_bias===setup)picks.push('setup');if(s.driving_style&&s.driving_style===style)picks.push('style');if(s.pit_plan&&s.pit_plan===pit)picks.push('pit plan');
+  const grade=picks.length===3?'A':picks.length===2?'B+':picks.length===1?'B':'C+';
+  const copy=`Engineering favors ${setup.toLowerCase()} setup, ${style.toLowerCase()} racecraft and a ${pit.toLowerCase()} pit window here. ${fit!==null?`Your current driver-to-track fit is ${fit}/100.`:''}`;
+  return {setup,style,pit,grade,copy};
+}
 function renderWeekend(){
   const w=DATA.weekend,d=DATA.dashboard;
   if(!w.race){$('#weekendTrack').innerHTML='<div class="empty">Season complete.</div>';$('#weekendControls').innerHTML='';$('#weekendStatus').innerHTML='';return}
-  $('#weekendTrack').innerHTML=`<div class="track-banner"><div class="round">Round ${w.race.round_no} • ${w.race.phase}</div><div class="track-title">${w.race.track_name}</div><div class="muted">${w.race.kind.replaceAll('_',' ')} • ${w.race.laps} laps</div></div>`;
-  const s=w.settings||{};
+  const ti=w.race.track_identity||{},s=w.settings||{},ins=w.practice_insight||{};
+  const grid=w.qualifying_grid||[];
+  const myId=String(d.driver?.id||'');
+  const key=(ti.key_attributes||[]).join(' / ');
+  $('#weekendTrack').innerHTML=`<div class="track-banner"><div class="round">Round ${w.race.round_no} • ${w.race.phase}</div><div class="track-title">${w.race.track_name}</div><div class="muted">${w.race.kind.replaceAll('_',' ')} • ${w.race.laps} laps</div>${ti.identity?`<div class="battle-banner">${ti.identity} • Key skills: ${key}</div>`:''}</div>
+    <div class="session-strip"><div class="session-step ${!s.practice_done?'active':''}"><strong>1 • Practice</strong><span>${s.practice_done?'Complete':'Learn the track and lock the setup'}</span></div><div class="session-step ${s.practice_done&&!s.qualifying_done?'active':''}"><strong>2 • Qualifying</strong><span>${s.qualifying_done?'Grid position secured':'Set the starting grid'}</span></div><div class="session-step ${s.qualifying_done?'active':''}"><strong>3 • Race Day</strong><span>${s.qualifying_done?'Ready for the green flag':'Qualifying required'}</span></div></div>
+    ${ins.message?`<div class="weekend-story"><div class="eyebrow">Practice Notebook</div><strong>${ins.label} Track Fit • ${Number(ins.rating||0).toFixed(1)}</strong><div class="muted" style="margin-top:5px">${ins.message}. ${ti.identity||'This circuit'} puts the spotlight on ${key||'a balanced build'}.</div><div class="fit-meter"><span style="width:${Math.max(8,Math.min(100,Number(ins.rating||0)))}%"></span></div></div>`:''}`;
   $('#weekendControls').innerHTML=`<div class="grid" style="margin-top:12px">
     <div class="span4"><label>Setup Bias</label><select id="setup"><option>SPEED</option><option ${(!s.setup_bias||s.setup_bias==='BALANCED')?'selected':''}>BALANCED</option><option ${s.setup_bias==='HANDLING'?'selected':''}>HANDLING</option></select></div>
     <div class="span4"><label>Driving Style</label><select id="style"><option>AGGRESSIVE</option><option ${(!s.driving_style||s.driving_style==='BALANCED')?'selected':''}>BALANCED</option><option ${s.driving_style==='CONSERVATIVE'?'selected':''}>CONSERVATIVE</option></select></div>
     <div class="span4"><label>Pit Plan</label><select id="pit"><option>SHORT</option><option ${(!s.pit_plan||s.pit_plan==='STANDARD')?'selected':''}>STANDARD</option><option ${s.pit_plan==='LONG'?'selected':''}>LONG</option></select></div>
-  </div><div class="row" style="margin-top:14px"><button class="btn" onclick="practice()">Run Practice</button><button class="btn alt" onclick="qualify()" ${!s.practice_done?'disabled':''}>Qualify</button><button class="btn good" onclick="simRace()" ${!s.qualifying_done?'disabled':''}>Race</button></div>`;
-  $('#weekendStatus').innerHTML=`<div class="kpis"><div class="kpi"><strong>${s.practice_done?'✓':'—'}</strong><span>Practice</span></div><div class="kpi"><strong>${s.qualifying_done?'P'+s.qualifying_pos:'—'}</strong><span>Qualifying</span></div><div class="kpi"><strong>${s.setup_bias||'—'}</strong><span>Setup</span></div><div class="kpi"><strong>${s.pit_plan||'—'}</strong><span>Pit Plan</span></div></div><p class="muted">Your choices affect the real lap-by-lap engine. You do not need to be online during the race once your weekend plan is set.</p>`;
+  </div><div class="row" style="margin-top:14px"><button class="btn" onclick="practice()">Run Practice</button><button class="btn alt" onclick="qualify()" ${!s.practice_done?'disabled':''}>Run Qualifying</button><button class="btn good" onclick="simRace()" ${!s.qualifying_done?'disabled':''}>Go To Race Day →</button></div>
+  ${grid.length?`<div class="qualifying-board"><div class="qualifying-head"><div>Pos</div><div>Car</div><div>Driver</div><div style="text-align:right">Lap</div></div>${grid.map(r=>`<div class="qualifying-row ${String(r.driver_id)===myId?'you':''}"><div class="qualifying-pos">P${r.position}</div><div class="qualifying-car">#${r.number}</div><div>${r.name}${String(r.driver_id)===myId?' <span class="badge">YOU</span>':''}</div><div class="qualifying-time">${Number(r.lap_time).toFixed(3)}</div></div>`).join('')}</div>`:''}`;
+  const front=grid.slice(0,10);
+  $('#weekendStatus').innerHTML=`<div class="kpis"><div class="kpi"><strong>${s.practice_done?'✓':'—'}</strong><span>Practice</span></div><div class="kpi"><strong>${s.qualifying_done?'P'+s.qualifying_pos:'—'}</strong><span>Qualifying</span></div><div class="kpi"><strong>${s.setup_bias||'—'}</strong><span>Setup</span></div><div class="kpi"><strong>${s.pit_plan||'—'}</strong><span>Pit Plan</span></div></div>
+    ${s.qualifying_done?`<div class="weekend-story"><div class="eyebrow">Pre-Race Storyline</div><strong>${Number(s.qualifying_pos)<=5?'Starting in the fight up front.':Number(s.qualifying_pos)<=15?'A clean launch can put you in contention.':'Traffic will be part of the challenge.'}</strong><div class="muted" style="margin-top:5px">You roll off P${s.qualifying_pos} at ${w.race.track_name}. ${ti.identity||'Track identity'} rewards ${key||'execution'}.</div></div>`:'<p class="muted">Complete practice, then qualify to reveal the starting grid and Race Day storyline.</p>'}
+    ${front.length?`<h3 style="margin-top:16px">Starting Grid • Top 10</h3><div class="grid-preview">${front.map(r=>`<div class="grid-slot ${String(r.driver_id)===myId?'you':''}"><strong>P${r.position} • #${r.number}</strong> ${r.name}</div>`).join('')}</div>`:''}`;
 }
 async function practice(){try{await post('/api/weekend/practice',{setup_bias:$('#setup').value,driving_style:$('#style').value,pit_plan:$('#pit').value});await loadAll()}catch(e){toast(e.message)}}
 async function qualify(){try{const j=await post('/api/weekend/qualify',{seed:Date.now()%1000000});toast('Qualified P'+j.position);await loadAll()}catch(e){toast(e.message)}}
@@ -851,7 +929,7 @@ function renderRacecast(){
 
 async function renderDriver(){
   const id=DATA.dashboard.driver.id;
-  let p,prog;try{[p,prog]=await Promise.all([api('/api/driver/'+id),api('/api/progression')])}catch{return}
+  let p,prog,world;try{[p,prog,world]=await Promise.all([api('/api/driver/'+id),api('/api/progression'),api('/api/career-world')])}catch{return}
   const d=p.driver,c=p.career;
   $('#driverCard').innerHTML=`<div class="number">#${d.number}</div><div class="driver-name">${d.name}</div><div class="team-name">${d.team_name||'Free Agent'} • ${d.role}</div>
    <div class="kpis"><div class="kpi"><strong>${c.wins}</strong><span>Career Wins</span></div><div class="kpi"><strong>${c.championships}</strong><span>Titles</span></div><div class="kpi"><strong>${c.starts}</strong><span>Starts</span></div><div class="kpi"><strong>${Number(d.xp).toFixed(2)}</strong><span>XP</span></div></div>
@@ -859,6 +937,8 @@ async function renderDriver(){
   const attrs=['spd','rcr','qlf','con','tir','drf','ctl','agg'];
   $('#attributes').innerHTML=attrs.map(a=>`<div class="attr"><div class="n">${a.toUpperCase()}</div><div class="v">${d[a]}</div><button onclick="upgrade('${a.toUpperCase()}')">Upgrade • ${prog.costs[a.toUpperCase()]} XP</button></div>`).join('');
   $('#careerHistory').innerHTML=p.seasons.length?table(p.seasons.map(x=>[x.season,x.team_name||'—',x.role,'P'+x.finish,x.wins,x.top5,x.top10,x.made_playoffs?'Yes':'No']),['Season','Team','Role','Finish','Wins','T5','T10','Playoffs']):'<div class="empty">Your career is just beginning.</div>';
+  const dy=world.dynamics||{};const rivals=world.rivalries||[];const miles=world.milestones||[];
+  $('#livingCareer').innerHTML=`<div class="kpis"><div class="kpi"><strong>${Number(dy.reputation||50).toFixed(0)}</strong><span>Reputation</span></div><div class="kpi"><strong>${Number(dy.momentum||0)>0?'+':''}${Number(dy.momentum||0).toFixed(0)}</strong><span>Momentum</span></div><div class="kpi"><strong>${dy.clean_races||0}</strong><span>Clean Races</span></div><div class="kpi"><strong>${miles.length}</strong><span>Milestones</span></div></div><div class="grid" style="margin-top:12px"><div class="span6"><h3>Rivalries</h3>${rivals.length?rivals.map(r=>`<div class="offer"><strong>#${r.rival_number} ${r.rival_name}</strong><div class="muted">${r.rival_team||'Free Agent'} • Heat ${Number(r.heat).toFixed(0)} • ${r.meetings} battles</div></div>`).join(''):'<div class="empty">No rivalry has formed yet.</div>'}</div><div class="span6"><h3>Milestones</h3>${miles.length?miles.slice(0,5).map(m=>`<div class="newsitem"><strong>${m.title}</strong><div class="muted">Season ${m.season}</div></div>`).join(''):'<div class="empty">Your first milestone is still ahead.</div>'}</div></div>`;
 }
 async function upgrade(a){try{const j=await post('/api/my-driver/upgrade',{attribute:a});toast(`${a} upgraded. Cost ${j.spent} XP`);await loadAll()}catch(e){toast(e.message)}}
 
@@ -919,7 +999,7 @@ async function prepareOffseason(){try{const j=await post('/api/offseason/prepare
 async function finalizeOffseason(){try{const j=await post('/api/offseason/finalize',{});toast('Season '+j.season+' created.');await loadAll();go('home')}catch(e){toast(e.message)}}
 async function resetDemo(){if(!confirm('Reset the entire Genesis demo?'))return;try{await post('/api/commish/reset-demo',{});await loadAll();go('home')}catch(e){toast(e.message)}}
 function table(rows,headers){return `<div class="tablewrap"><table><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
-loadAll();
+bootstrap().catch(e=>{console.error(e);toast(e.message||'Unable to start ESCL')});
 </script>
 </body>
 </html>
